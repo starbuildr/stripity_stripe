@@ -80,7 +80,8 @@ defmodule Stripe.Session do
           :payment_method_types => list(String.t()),
           :submit_type => String.t(),
           :subscription => Stripe.id() | Stripe.Subscription.t() | nil,
-          :success_url => String.t()
+          :success_url => String.t(),
+          :setup_intent => Stripe.SetupIntent.t | nil
         }
 
   defstruct [
@@ -99,7 +100,8 @@ defmodule Stripe.Session do
     :payment_method_types,
     :submit_type,
     :subscription,
-    :success_url
+    :success_url,
+    :setup_intent
   ]
 
   @plural_endpoint "checkout/sessions"
